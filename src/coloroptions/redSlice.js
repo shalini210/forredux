@@ -21,7 +21,7 @@ export const redSlice=createSlice({
         yellow:(state)=>
         {
             state.colorname='yellow';
-            state.fs='100px'
+            state.fs='70px'
         }
     }
 })

@@ -7,6 +7,7 @@ import { greenAction } from './actions/greenAction';
 import Footer from './Footer';
 import {useSelector,useDispatch} from 'react-redux';
 import { red,green ,yellow} from './coloroptions/redSlice';
+import Bankaccount from './Bankaccount';
 export default function App()
 {
   const color = useSelector((state)=>state.color.colorname);
@@ -14,6 +15,8 @@ export default function App()
   const dispatch = useDispatch();
   return (
     <div className="App">
+      <Bankaccount></Bankaccount>
+      <h1>*******************************************</h1>
 <h1> redux using toolkit</h1>
 <h2 style={{backgroundColor:color,fontSize:size}}>current value of color is : {color}</h2>
 <input type="button" value="to red" onClick={()=>dispatch(red())}/>
