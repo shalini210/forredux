@@ -6,23 +6,33 @@ import { greenAction } from './actions/greenAction';
 
 import Footer from './Footer';
 import {useSelector,useDispatch} from 'react-redux';
+import { increment,decrement } from './slices/amountSlice';
 import { red,green ,yellow} from './coloroptions/redSlice';
 import Bankaccount from './Bankaccount';
+import Teacher from './components/Teacher';
 export default function App()
 {
+  const counter = useSelector((state)=>state.bank1.counter)
   const color = useSelector((state)=>state.color.colorname);
   const size = useSelector((state)=>state.color.fs)
   const dispatch = useDispatch();
   return (
-    <div className="App">
-      <Bankaccount></Bankaccount>
-      <h1>*******************************************</h1>
-<h1> redux using toolkit</h1>
-<h2 style={{backgroundColor:color,fontSize:size}}>current value of color is : {color}</h2>
-<input type="button" value="to red" onClick={()=>dispatch(red())}/>
-<input type="button" value="to green" onClick={()=>dispatch(green())}/>
-<input type="button" value="to yellow" onClick={()=>dispatch(yellow())}/>
-    </div>
+    <>
+    <Teacher></Teacher>
+    </>
+//     <div className="App">
+//       <h2>count :{counter}</h2>
+//       <input type="button" value="+" onClick={()=>dispatch(increment())}/>
+//       <input type="button" value="-" onClick={()=>dispatch(decrement())}/>
+//        <h1>*******************************************</h1>
+//       <Bankaccount></Bankaccount>
+//       <h1>*******************************************</h1>
+// <h1> redux using toolkit</h1>
+// <h2 style={{backgroundColor:color,fontSize:size}}>current value of color is : {color}</h2>
+// <input type="button" value="to red" onClick={()=>dispatch(red())}/>
+// <input type="button" value="to green" onClick={()=>dispatch(green())}/>
+// <input type="button" value="to yellow" onClick={()=>dispatch(yellow())}/>
+//     </div>
   )
 }
 // function App(props) {

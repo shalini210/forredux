@@ -6,7 +6,7 @@ let d="pending work ";
 const initialState ={
     amount:1000,
     data1:d,
-    counter:0
+    counter:100
     
 }
 export const amountSlice =createSlice( {
@@ -41,6 +41,6 @@ export const amountSlice =createSlice( {
         // }
     }
 })
-export const {deposite,withdraw} = amountSlice.actions
-export const {increment,decrement} =amountSlice.actions
+export const {increment,decrement,deposite,withdraw} = amountSlice.actions
+// export const {} =amountSlice.actions
 export default amountSlice.reducer
